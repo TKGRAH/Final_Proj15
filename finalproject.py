@@ -1,5 +1,5 @@
-print ("Please input Attacking number and defending number, in that order.")
-def numdiceroll(x, y):
+print ("Please input Roll(A, D) Attacking number and defending number, in that order.")
+def roll(x, y):
     import random
     sides = 6
     attacking = x
@@ -8,6 +8,78 @@ def numdiceroll(x, y):
         dicea = random.sample(range(1, sides + 1), 3)
         print (dicea)
         diced = random.sample(range(1, sides + 1), 2)
+        print (diced)
+        if max(dicea) > max(diced) and min(dicea) > min(diced):
+            print ("Attacker Wins Both")
+        if max(dicea) > max(diced) and min(dicea) < min(diced):
+            print ("Both Lose 1")
+        if max(dicea) < max(diced) and min(dicea) > min(diced):
+            print ("Both Lose 1")
+        if max(dicea) < max(diced) and min(dicea) < min(diced):
+            print ("Defender Wins Both")
+        if max(dicea) == max(diced) and min(dicea) == min(diced):
+            print ("Reroll")
+        if max(dicea) == max(diced) or min(dicea) == min(diced):
+            print ("Reroll")
+
+    if attacking == 2 and defending == 2:
+        dicea = random.sample(range(1, sides + 1), 2)
+        print (dicea)
+        diced = random.sample(range(1, sides + 1), 2)
+        print (diced)
+        if max(dicea) > max(diced) and min(dicea) > min(diced):
+            print ("Attacker Wins Both")
+        if max(dicea) > max(diced) and min(dicea) < min(diced):
+            print ("Both Lose 1")
+        if max(dicea) < max(diced) and min(dicea) > min(diced):
+            print ("Both Lose 1")
+        if max(dicea) < max(diced) and min(dicea) < min(diced):
+            print ("Defender Wins Both")
+        if max(dicea) == max(diced) and min(dicea) == min(diced):
+            print ("Reroll")
+        if max(dicea) == max(diced) or min(dicea) == min(diced):
+            print ("Reroll")
+
+    if attacking == 1 and defending == 2:
+        dicea = random.sample(range(1, sides + 1), 1)
+        print (dicea)
+        diced = random.sample(range(1, sides + 1), 2)
+        print (diced)
+        if max(dicea) > max(diced) and min(dicea) > min(diced):
+            print ("Attacker Wins Both")
+        if max(dicea) > max(diced) and min(dicea) < min(diced):
+            print ("Both Lose 1")
+        if max(dicea) < max(diced) and min(dicea) > min(diced):
+            print ("Both Lose 1")
+        if max(dicea) < max(diced) and min(dicea) < min(diced):
+            print ("Defender Wins Both")
+        if max(dicea) == max(diced) and min(dicea) == min(diced):
+            print ("Reroll")
+        if max(dicea) == max(diced) or min(dicea) == min(diced):
+            print ("Reroll")
+
+    if attacking == 2 and defending == 1:
+        dicea = random.sample(range(1, sides + 1), 2)
+        print (dicea)
+        diced = random.sample(range(1, sides + 1), 1)
+        print (diced)
+        if max(dicea) > max(diced) and min(dicea) > min(diced):
+            print ("Attacker Wins Both")
+        if max(dicea) > max(diced) and min(dicea) < min(diced):
+            print ("Both Lose 1")
+        if max(dicea) < max(diced) and min(dicea) > min(diced):
+            print ("Both Lose 1")
+        if max(dicea) < max(diced) and min(dicea) < min(diced):
+            print ("Defender Wins Both")
+        if max(dicea) == max(diced) and min(dicea) == min(diced):
+            print ("Reroll")
+        if max(dicea) == max(diced) or min(dicea) == min(diced):
+            print ("Reroll")
+
+    if attacking == 1 and defending == 1:
+        dicea = random.sample(range(1, sides + 1), 1)
+        print (dicea)
+        diced = random.sample(range(1, sides + 1), 1)
         print (diced)
         if max(dicea) > max(diced) and min(dicea) > min(diced):
             print ("Attacker Wins Both")
