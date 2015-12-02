@@ -44,14 +44,19 @@ def sim(Attack_Number, Defense_Number):
     Attack_Units = Attack_Number
     Defense_Units = Defense_Number
 
-    while Attack_Units != 0 and Defense_Units != 0:
-        if do_battle_large() == "Attacker Wins Both":
-            Defense_Units -= 2
-        if do_battle_large() == "Both Lose 1":
-            Attack_Units -= 1
-            Defense_Units -= 1
-        if do_battle_large() == "Defender Wins Both":
-            Attack_Units -= 2
+    LargeBattle = do_battle_large()
+
+    if LargeBattle == "Attacker Wins Both":
+        Defense_Units -= 2
+        print Defense_Units
+    if LargeBattle == "Both Lose 1":
+        Attack_Units -= 1
+        Defense_Units -= 1
+        print Defense_Units
+        print Attack_Units
+    if LargeBattle == "Defender Wins Both":
+        Attack_Units -= 2
+        print Attack_Units
 
     if Attack_Units == 0:
         print ("Attacker Loses")
