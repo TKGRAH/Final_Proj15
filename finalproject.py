@@ -58,7 +58,7 @@ def do_battle(attackers, defenders):
 
 def roll_again():
     print "Input format is: 'Yes, 1:2' or 'Yes, 2:1' or 'No'"
-    answer = raw_input("Attack Again? ")
+    answer = input("Attack Again? ")
     if answer == "Yes, 2:1":
         do_battle(2, 1)
     if answer == "Yes, 1:2":
@@ -81,27 +81,43 @@ def Risk():
     Player1_Army = 40
     Player2_Army = 40
 
+    ## Note: Python 3.5 which I am using at home uses input() for raw_input().
     while Player1_Army != 0 and Player2_Army != 0 and no_count < 5:
-        player1_attack = raw_input("Does player 1 want to attack? ")
+        player1_attack = input("Does player 1 want to attack? ")
         if player1_attack == "Yes":
-            player1_number_att = raw_input("How many attacking? ")
+            player1_number_att = input("How many attacking? ")
             player1_number_att = int(player1_number_att)
-            player2_number_def = raw_input("How many defending? ")
+            player2_number_def = input("How many defending? ")
             player2_number_def = int(player2_number_def)
             return do_battle(player1_number_att, player2_number_def)
+        ## Counter here to remove points from PlayerX_Army based on results
+        ## of do_battle(). How can I set the results from do_battle() to
+        ## tally up and then subtract them from the counter?
         if player1_attack == "No":
             no_count += 1
-        player2_attack = raw_input("Does player 2 want to attack? ")
+        player2_attack = input("Does player 2 want to attack? ")
         if player2_attack == "Yes":
-            player2_number_att = raw_input("How many attacking? ")
+            player2_number_att = input("How many attacking? ")
             player2_number_att = int(player2_number_att)
-            player1_number_def = raw_input("How many defending? ")
+            player1_number_def = input("How many defending? ")
             player1_number_def = int(player1_number_def)
             return do_battle(player2_number_att, player1_number_def)
+        ## Counter here to remove points from PlayerX_Army based on results
+        ## of do_battle(). How can I set the results from do_battle() to
+        ## tally up and then subtract them from the counter?
         if player2_attack == "No":
             no_count += 1
         if no_count > 5:
             print("No contest")
+        ## When I run this it repeats fine when I use the "No" input.
+        ## After 6 inputs of "No" it prints "No contest", but when I
+        ## give it a "Yes" and number inputs it just runs that and returns the
+        ## results and doesn't switch to the next players turn.
+
+        ## Also, I set two parameters farther up that are what I'm calling "valid results"
+        ## my plan was to compare the results of do_battle() to them and
+        ## if they don't match have it run my roll_again() function. Not sure how
+        ## to do this where it works under the while loop.
                 
             
     
