@@ -5,7 +5,7 @@ print("Must be 3 or less attackers and 2 or less defenders")
 
 
 def get_rolls(rolls):
-    """DOCSTRING HERE.
+    """Takes a number as input for a dice and then returns a number between 1 and 6.
 
     >>> random.seed(0)
     >>> get_rolls(1)
@@ -20,7 +20,8 @@ def get_rolls(rolls):
     return results
 
 def do_battle(attackers, defenders):
-    """DOCSTRING HERE.
+    """Takes two inputs, sorts them into dice rolls and lists, then compares the lists
+    and returns losses and the rolls.
 
     >>> random.seed(0)
     >>> do_battle()
@@ -57,17 +58,27 @@ def do_battle(attackers, defenders):
     return attackers, defenders
 
 def roll_again():
-    print "Input format is: 'Yes, 1:2' or 'Yes, 2:1' or 'No'"
+    """A function to be run if the result of a battle has left either side with
+    units left over.
+
+    """
+    
+    print ("Input format is: 'Yes, 1:2' or 'Yes, 2:1' or 'No'")
     answer = input("Attack Again? ")
     if answer == "Yes, 2:1":
         do_battle(2, 1)
     if answer == "Yes, 1:2":
         do_battle(1, 2)
     else:
-        print "Battle Over"
+        print ("Battle Over")
             
     
 def Risk():
+    """Main function of the program. Calls all other functions to run when they should
+    lets users input number attacking and defending and keeps track of army size.
+
+    """
+    
     ## Risk_Map = {'Alaska' : raw_input("Player? "), 'Alberta' : raw_input("Player? "), 'Central America' : raw_input("Player? "), 'Eastern United States' : raw_input("Player? "), 'Greenland' : raw_input("Player? "), 'Northwest Territory' : raw_input("Player? "), 'Ontario' : raw_input("Player? "), 'Quebec' : raw_input("Player? "), 'Western United States' : raw_input("Player? "), 'Argentina' : raw_input("Player? "), 'Brazil' : raw_input("Player? "), 'Peru' : raw_input("Player? "), 'Venezuela' : raw_input("Player? "), 'Great Britain' : raw_input("Player? "), 'Iceland' : raw_input("Player? "), 'Northern Europe' : raw_input("Player? "), 'Scandinavia' : raw_input("Player? "), 'Southern Europe' : raw_input("Player? "), 'Ukraine' : raw_input("Player? "), 'Western Europe' : raw_input("Player? "), 'Congo' : raw_input("Player? "), 'East Africa' : raw_input("Player? "), 'Egypt' : raw_input("Player? "), 'Madagascar' : raw_input("Player? "), 'North Africa' : raw_input("Player? "), 'South Africa' : raw_input("Player? "), 'Afghanistan' : raw_input("Player? "), 'China' : raw_input("Player? "), 'India' : raw_input("Player? "), 'Irkutsk' : raw_input("Player? "), 'Japan' : raw_input("Player? "), 'Kamchatka' : raw_input("Player? "), 'Middle East' : raw_input("Player? "), 'Mongolia' : raw_input("Player? "), 'Siam' : raw_input("Player? "), 'Siberia' : raw_input("Player? "), 'Ural' : raw_input("Player? "), 'Yakutsk' : raw_input("Player? "), 'Eastern Australia' : raw_input("Player? "), 'Indonesia' : raw_input("Player? "), 'New Guinea' : raw_input("Player? "), 'Western Australia' : raw_input("Player? ")}
 
     print("Both Players start with 40 armies split among 14 provinces")
@@ -128,8 +139,8 @@ if __name__ == '__main__':
     import doctest
     doctest.testmod()
 
-provinceA = 7
-provinceB = 5
+## provinceA = 7
+## provinceB = 5
 ## print("Player A has {} armies, Player B has {} armies.".format(ProvinceA, ProvinceB))
 ## print("Its playerA's turn.")
 ## Repeat until someone wins or both players pass three times
